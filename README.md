@@ -1,154 +1,135 @@
-# Fullstack Task Manager (MERN)
+# Fullstack Project Management Application (MERN)
 
+## Overview
+The **Project Management Application** is a comprehensive solution for managing multiple projects and tasks, enabling teams to collaborate effectively. Built using the MERN stack (MongoDB, Express.js, React, and Node.js), the application provides features like project prioritization, team collaboration tools, and deadline management, fostering better productivity and organization.
 
+## Features
 
-# Overview
-The Cloud-Based Task Manager is a web application designed to streamline team task management. Built using the MERN stack (MongoDB, Express.js, React, and Node.js), this platform provides a user-friendly interface for efficient task assignment, tracking, and collaboration. The application caters to administrators and regular users, offering comprehensive features to enhance productivity and organization.
+### Admin Features:
+1. **Project Management:**
+   - Create, edit, and manage multiple projects.
+   - Assign project priorities (high, medium, low).
+   - Track project status and deadlines.
 
+2. **User and Team Management:**
+   - Add and manage team members.
+   - Assign tasks to individual or multiple users.
+   - Manage user roles and permissions (admin/user).
 
-
-### Why/Problem?
-In a dynamic work environment, effective task management is crucial for team success. Traditional methods of task tracking through spreadsheets or manual systems can be cumbersome and prone to errors. The Cloud-Based Task Manager aims to address these challenges by providing a centralized platform for task management, enabling seamless collaboration and improved workflow efficiency.
-
-
-
-### **Background**:
-With the rise of remote work and dispersed teams, there is a growing need for tools that facilitate effective communication and task coordination. The Cloud-Based Task Manager addresses this need by leveraging modern web technologies to create an intuitive and responsive task management solution. The MERN stack ensures scalability, while the integration of Redux Toolkit, Headless UI, and Tailwind CSS enhances user experience and performance.
-
-
-### 
-## **Admin Features:**
-1. **User Management:**
-    - Create admin accounts.
-    - Add and manage team members.
-
-2. **Task Assignment:**
-    - Assign tasks to individual or multiple users.
-    - Update task details and status.
-
-3. **Task Properties:**
-    - Label tasks as todo, in progress, or completed.
-    - Assign priority levels (high, medium, normal, low).
-    - Add and manage sub-tasks.
+3. **Task Management:**
+   - Assign, update, and manage tasks across different projects.
+   - Set task statuses: to-do, in-progress, or completed.
+   - Add and manage task priorities (high, medium, low).
+   - Manage sub-tasks within larger tasks.
 
 4. **Asset Management:**
-    - Upload task assets, such as images.
+   - Upload and manage project-related assets (images, documents, etc.).
 
-5. **User Account Control:**
-    - Disable or activate user accounts.
-    - Permanently delete or trash tasks.
+### User Features:
+1. **Project Interaction:**
+   - View and track projects and their progress.
+   - Interact with tasks: mark as in-progress or completed.
+   - Collaborate with team members through comments on tasks.
 
+2. **Task Management:**
+   - View assigned tasks.
+   - Track task status, deadlines, and priorities.
 
-## **User Features:**
-1. **Task Interaction:**
-    - Change task status (in progress or completed).
-    - View detailed task information.
+3. **Profile Management:**
+   - Update personal profiles.
+   - Change account password securely.
 
-2. **Communication:**
-    - Add comments or chat to task activities.
+### General Features:
+1. **Dashboard:**
+   - Visualize project timelines and task progress.
+   - Manage tasks based on project priorities.
 
+2. **Authentication and Authorization:**
+   - Secure login system.
+   - Role-based access control (admin/user).
 
-## **General Features:**
-1. **Authentication and Authorization:**
-    - User login with secure authentication.
-    - Role-based access control.
+3. **Deadline and Progress Tracking:**
+   - Automatic reminders for upcoming project deadlines.
+   - Detailed progress tracking for individual projects and tasks.
 
-2. **Profile Management:**
-    - Update user profiles.
+## Technologies Used
 
-3. **Password Management:**
-    - Change passwords securely.
+### Frontend:
+- **React** (Vite)
+- **Redux Toolkit** for State Management
+- **Headless UI** for building accessible components
+- **Tailwind CSS** for styling
 
-4. **Dashboard:**
-    - Provide a summary of user activities.
-    - Filter tasks into todo, in progress, or completed.
+### Backend:
+- **Node.js** with **Express.js**
 
+### Database:
+- **MongoDB** for efficient and scalable data storage
 
+### Other Tools:
+- **JWT (JSON Web Token)** for authentication
+- **Cloudinary** (optional) for asset management
 
+## Setup Instructions
 
-## **Technologies Used:**
-- **Frontend:**
-    - React (Vite)
-    - Redux Toolkit for State Management
-    - Headless UI
-    - Tailwind CSS
+### Server Setup
 
+1. Create an `.env` file in the `server` folder with the following variables:
+    ```bash
+    MONGODB_URI=your MongoDB connection URL
+    JWT_SECRET=your secret key
+    PORT=8800 # or any port number
+    NODE_ENV=development
+    ```
 
-- **Backend:**
-    - Node.js with Express.js
-    
-- **Database:**
-    - MongoDB for efficient and scalable data storage.
+2. Set up MongoDB:
+    - Visit [MongoDB Atlas](https://www.mongodb.com/cloud/atlas), create an account, and configure a new cluster.
+    - Create a new database and configure the `.env` file with the MongoDB connection URL.
 
+3. To start the server:
+    ```bash
+    cd server
+    npm install
+    npm start
+    ```
+   You should see a message indicating that the server is running and the database is connected.
 
-The Cloud-Based Task Manager is an innovative solution that brings efficiency and organization to task management within teams. By harnessing the power of the MERN stack and modern frontend technologies, the platform provides a seamless experience for both administrators and users, fostering collaboration and productivity.
+### Client Setup
 
-&nbsp;
+1. Create an `.env` file in the `client` folder with the following variables:
+    ```bash
+    VITE_APP_BASE_URL=http://localhost:8800
+    VITE_APP_FIREBASE_API_KEY=your Firebase API key (optional)
+    ```
 
-## SETUP INSTRUCTIONS
+2. To run the client:
+    ```bash
+    cd client
+    npm install
+    npm start
+    ```
 
+3. Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
 
-# Server Setup
+## Project Structure
 
-## Environment variables
-First, create the environment variables file `.env` in the server folder. The `.env` file contains the following environment variables:
+- **client/**: Contains the React frontend.
+- **server/**: Contains the Express backend.
+- **utils/**: Utility functions, middlewares, and helpers.
+- **models/**: Mongoose models for MongoDB.
+- **controllers/**: Application logic for tasks, users, and projects.
+- **routes/**: API routes for tasks, users, and projects.
 
-- MONGODB_URI = `your MongoDB URL`
-- JWT_SECRET = `any secret key - must be secured`
-- PORT = `8800` or any port number
-- NODE_ENV = `development`
+## Future Enhancements
 
-
-&nbsp;
-
-## Set Up MongoDB:
-
-1. Setting up MongoDB involves a few steps:
-    - Visit MongoDB Atlas Website
-        - Go to the MongoDB Atlas website: [https://www.mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas).
-
-    - Create an Account
-    - Log in to your MongoDB Atlas account.
-    - Create a New Cluster
-    - Choose a Cloud Provider and Region
-    - Configure Cluster Settings
-    - Create Cluster
-    - Wait for Cluster to Deploy
-    - Create Database User
-    - Set Up IP Whitelist
-    - Connect to Cluster
-    - Configure Your Application
-    - Test the Connection
-
-2. Create a new database and configure the `.env` file with the MongoDB connection URL. 
-
-## Steps to run server
-
-1. Open the project in any editor of choice.
-2. Navigate into the server directory `cd server`.
-3. Run `npm i` or `npm install` to install the packages.
-4. Run `npm start` to start the server.
-
-If configured correctly, you should see a message indicating that the server is running successfully and `Database Connected`.
-
-&nbsp;
-
-# Client Side Setup
-
-## Environment variables
-First, create the environment variables file `.env` in the client folder. The `.env` file contains the following environment variables:
-
-- VITE_APP_BASE_URL = `http://localhost:8800` #Note: Change the port 8800 to your port number.
-- VITE_APP_FIREBASE_API_KEY = `Firebase api key`
-
-## Steps to run client
-
-1. Navigate into the client directory `cd client`.
-2. Run `npm i` or `npm install` to install the packages.
-3. Run `npm start` to run the app on `http://localhost:3000`.
-4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Integration with **Cloudinary** for better asset management.
+- Add **real-time notifications** for task updates.
+- Implement **task reminders** for due dates.
+- Improve the **dashboard UI** for better data visualization.
+- Add **Kanban view** for task management.
 
 
 
-&nbsp;
+---
 
+**Developed by:** [Prathamesh Khokaralkar]
